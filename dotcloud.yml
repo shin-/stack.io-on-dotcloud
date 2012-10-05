@@ -1,0 +1,6 @@
+server:
+    type: custom
+    ports:
+        www: http
+    buildscript: ./build.sh
+    process: node project/index
