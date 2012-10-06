@@ -3,4 +3,9 @@ server:
     ports:
         www: http
     buildscript: build.sh
-    process: node project/index
+    processes:
+        server: ./start.sh index
+        echo: ./start.sh echo-service
+    environment:
+        REGISTRAR_ENDPOINT: tcp://0.0.0.0:27615
+        ECHO_ENDPOINT: tcp://127.0.0.1:32222

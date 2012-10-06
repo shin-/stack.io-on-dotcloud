@@ -66,6 +66,7 @@ mkdir -p /tmp/zmqnode && rm -rf /tmp/zmqnode/* && cd /tmp/zmqnode
 curl -L https://github.com/shin-/zeromq.node/tarball/$nodezmq_version | tar -zxf -
 
 echo "# Moving downloaded folder to node_modules"
+mkdir $project_dir/node_modules # If no package.json / no other dependency
 rm -rf $project_dir/node_modules/zmq
 mv shin--* $project_dir/node_modules/zmq
 cd $project_dir/node_modules/zmq
