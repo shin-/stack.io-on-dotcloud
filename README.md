@@ -19,7 +19,7 @@ This is a preset sample project ready to be deployed on dotCloud for application
         dotcloud create mystackioapp
         dotcloud push -A mystackioapp .
 
-  Patience! The first push takes a while because we're compiling and installing node.js on your container. Subsequent pushes will be much shorter.
+  **Patience! The first push takes a while because we're compiling and installing node.js on your container. Subsequent pushes will be much shorter.**
 
 3. Set up your application in the `project` subfolder - You're all set!
 
