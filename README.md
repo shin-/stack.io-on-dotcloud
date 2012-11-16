@@ -11,12 +11,10 @@ This is a preset sample project ready to be deployed on dotCloud for application
       cd stack.io-on-dotcloud/
       dotcloud create mystackioapp
       dotcloud push mystackioapp .
-
   * CLI 0.9+
       cd stack.io-on-dotcloud/
       dotcloud create mystackioapp
-      dotcloud push -A mystackioapp .
-Patience! The first push takes a while because we're compiling and installing node.js on your container. Subsequent pushes will be much shorter.
+      dotcloud push
 
 3. Set up your application in the `project` subfolder - You're all set!
 
@@ -28,8 +26,12 @@ Modify the `stackio_version` and `node_version` variables in the `build.sh` scri
 
 ### How do I use a different subfolder name for my project?
 
-Modify the `project_dir` variable in the `build.sh` script.
+Modify the `project_dir` variable in the `build.sh` script and the `PROJECT_DIR` environment variable in the `dotcloud.yml` file.
 
 ### How do I set up additional stack.io services?
 
-Add an entry in the `processes` dictionary in your `dotcloud.yml` file. Use the `start.sh` script to pass the required `LD_LIBRARY_PATH` configuration to the node script indicated as argument.
+Add an entry in the `supervisord.conf` file. Use the `start.sh` script to pass the required `LD_LIBRARY_PATH` configuration to the node script indicated as argument.
+
+## What's new
+
+* 11/16/2012: Now uses the curated nodejs service instead of a custom service. This should make the first push much faster as we don't need to compile and install node from source.
