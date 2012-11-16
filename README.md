@@ -25,11 +25,11 @@ This is a preset sample project ready to be deployed on dotCloud for application
 
 ### How do I use a different node.js/stack.io version?
 
-Modify the `stackio_version` and `node_version` variables in the `build.sh` script.
+Modify the `stackio_version` and `node_version` variables in the `postinstall` script.
 
 ### How do I use a different subfolder name for my project?
 
-Modify the `project_dir` variable in the `build.sh` script and the `PROJECT_DIR` environment variable in the `dotcloud.yml` file.
+Modify the `project_dir` variable in the `postinstall` script and the `PROJECT_DIR` environment variable in the `dotcloud.yml` file.
 
 ### How do I set up additional stack.io services?
 
