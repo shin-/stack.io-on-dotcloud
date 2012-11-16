@@ -7,7 +7,7 @@ var ioserv = new stack.ioServer(),
     httpServ = http.createServer(function(req, res) {
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.end('stack.io server is running!');
-    }).listen(process.env['PORT_WWW']);
+    }).listen(8080);
 
 ioserv.connector(new stack.SocketIOConnector(httpServ));
 ioserv.middleware(/.+/, /_stackio/, /.+/, stack.builtinsMiddleware);
